@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.App div{
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+}
+.App div span{
+  position: relative;
+  text-align: left;
+  display: block;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
