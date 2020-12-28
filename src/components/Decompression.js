@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-export const Decompression = () => {
+export const Decompression = (props) => {
+    const { origString, setOrigString } = props;
     const regex_eng = /^([a-z]+)/i;
     const regex_innermost_brackets = /(\d+\[(?:\[??[^[]*?\]))/i;
     const [code, setCode] = useState('');
-    const [origString, setOrigString] = useState([]);
     const handleKeyDown = (event) => {
         event.key === 'Enter' && onDecompStart(code);
     }
@@ -56,9 +56,9 @@ export const Decompression = () => {
     }
     return (
         <div>
-            <input value={code} onChange={(e) => setCode(e.target.value)} onKeyPress={(e) => handleKeyDown(e)} />
+            <label for="compressed-string">Compressed String </label>
+            <input name="compressed-string" value={code} onChange={(e) => setCode(e.target.value)} onKeyPress={(e) => handleKeyDown(e)} />
             <button onClick={() => onDecompStart(code)} >click me!</button>
-            <p>{origString}</p>
-        </div >
+        </div>
     )
 }

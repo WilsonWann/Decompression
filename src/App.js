@@ -1,11 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import { Decompression } from './components/Decompression';
+import { useState } from 'react';
 
 function App() {
+  const [origString, setOrigString] = useState('');
   return (
     <div className="App">
-      <Decompression />
+      <div>
+        <h2>
+          Compressed String
+        </h2>
+        <Decompression setOrigString={setOrigString} />
+      </div>
       <div>
         <h2>
           Tutorials
@@ -49,6 +56,12 @@ function App() {
         <span>
           Input is always valid, so no need to check its validity.
         </span>
+      </div>
+      <div>
+        <h2>
+          Un-compressed String
+        </h2>
+        <p style={{ wordBreak: 'break-all' }}>{origString}</p>
       </div>
     </div>
   );

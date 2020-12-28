@@ -7,6 +7,11 @@
   margin: 0 auto;
   width: 500px;
 }
+.App > div:nth-child(3){
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
 .App div span{
   position: relative;
   text-align: left;
